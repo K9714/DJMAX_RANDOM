@@ -27,4 +27,5 @@ class MouseEvent:
     LEAVE = "<Leave>"
 
 class KeyEvent:
-    pass
+    PRESS = "<KeyPress>"
+    RELEASE = "<KeyRelease>"

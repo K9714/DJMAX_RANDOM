@@ -24,6 +24,13 @@ class LevelFrame(tk.Frame):
         self._set_frame()
         self._set_grid()
         self.bind(MouseEvent.LEFT_TRIGGER, self.update_level)
+
+    def get_level(self):
+        nm_min = self.normal_min.value
+        nm_max = self.normal_max.value
+        sc_min = self.sc_min.value
+        sc_max = self.sc_max.value
+        return nm_min, nm_max, sc_min, sc_max
         
     def update_level(self, event):
         normal_min = self.normal_min.value

@@ -14,7 +14,7 @@ class TitleBar(tk.Frame):
         self.hasstyle = False
         self.parent.windowSize = [self.parent.winfo_width(), 
                                   self.parent.winfo_height()]
-        self.back_ground = "#2c2c2c"
+        self.back_ground = "#2b2b2b"
 
         self.parent.withdraw()
         self.parent.update()
@@ -42,11 +42,11 @@ class TitleBar(tk.Frame):
         self.parent.overrideredirect(True)
 
         #title bar
-        self.title_bar = tk.Frame(self.parent)
+        self.title_bar = tk.Frame(self.parent, bg=self.back_ground)
 
         #window title
         self.title_name = tk.Label(self.title_bar, text=self.title, 
-                             font=self.font)
+                             font=self.font, bg=self.back_ground)
 
         #minimize btn
         self.minimize_btn = tk.Button(self.title_bar, text='_', bg=self.back_ground, padx=5, pady=2, 
