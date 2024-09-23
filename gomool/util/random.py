@@ -15,6 +15,8 @@ def _regexp(expr, item):
     return reg.search(item) is not None
 
 def select_random(keys, levels):
+    if not keys:
+        return None
     connection = sqlite3.connect("./data/songs.db")
     connection.create_function("REGEXP", 2, _regexp)
     cur = connection.cursor()
@@ -34,6 +36,7 @@ def select_random(keys, levels):
     print(select)
     _send_keys(cur, select)
     connection.close()
+    return select
     
 def _send_keys(cur: sqlite3.Cursor, select):
     _, title, name, dlc, key, type, level = select

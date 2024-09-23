@@ -1,5 +1,14 @@
 from gomool.ui.root import Root
-import tkinter as tk
+from gomool import update
+import os
 
-root = Root()
-root.mainloop()
+def main():
+    if not os.path.exists("./data"):
+        os.mkdir("./data")
+        update.song_list()
+
+    root = Root()
+    root.mainloop()
+    
+if __name__ == "__main__":
+    main()
