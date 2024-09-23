@@ -62,8 +62,8 @@ def is_key_trigger(key: Keys):
     state = win32api.GetKeyState(key)
     old_state = _KEY_STATE.get(key, 0)
     # Pressed.
-    if state & 0x01 != old_state:
-        _KEY_STATE[key] = state & 0x01
+    if state < 0 and state != old_state:
+        _KEY_STATE[key] = state# & 0x01
         return True
     return False
 
@@ -76,7 +76,6 @@ def send_key_trigger(key: Keys):
         pydirectinput.press('up')
     for _ in range(3):
         pydirectinput.press('right')
-    print("!")
 
 def send_key_release(key: Keys):
     pass

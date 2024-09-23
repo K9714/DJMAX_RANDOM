@@ -33,7 +33,7 @@ def select_random(keys, levels):
     songs += rows
     if not songs:
         return None
-    select = random.sample(songs, 1)
+    select = random.sample(songs, 1)[0]
     _send_keys(cur, select)
     connection.close()
     return select
