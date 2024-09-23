@@ -8,5 +8,6 @@ DJMAX RESPECT V 의 랜덤 곡 선택기 - 고물랜드 팬메이드
 * Python 3.12
 ## 다운로드
 * [Beta v0.1](https://github.com/K9714/DJMAX_RANDOM_GOMOOL/releases/tag/v0.1)
+* [Campton Font](https://font.download/font/campton)
 ## Thanks
 * [V-Archive](https://v-archive.net/)
