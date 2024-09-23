@@ -7,9 +7,6 @@ DJMAX RESPECT V 의 랜덤 곡 선택기 - 고물랜드 팬메이드
 ## 개발 정보
 * Python 3.12
 ## 다운로드
-아직 개발중
-* exe 프로그램 빌더 추가
-* 유동적 난이도 조절 기능 추가
-* 특정 단축키를 누르면 화면에서 사라지는 기능 제작 예정
+* [Beta v0.1](https://github.com/K9714/DJMAX_RANDOM_GOMOOL/releases/tag/v0.1)
 ## Thanks
 * [V-Archive](https://v-archive.net/)
