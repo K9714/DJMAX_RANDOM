@@ -60,9 +60,9 @@ class Root(tk.Tk):
     def _toggle_withdraw(self):
         self.state = not self.state
         if self.state:
-            self.withdraw()
+            self.titlebar.maximize()
         else:
-            self.deiconify()
+            self.titlebar.minimize()
             
     # Event
     def _key_event_handler(self):

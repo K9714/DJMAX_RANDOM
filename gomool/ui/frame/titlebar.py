@@ -90,11 +90,12 @@ class TitleBar(tk.Frame):
         self.parent.withdraw()
         self.set_appwindow()
 
+
     def maximizeToggle(self, event=None):
         if self.maximized == False:
             self.winfo_update()
             #maximize current window
-            self.maximize_btn.config(text="❐")
+            # self.maximize_btn.config(text="❐")
             hwnd = windll.user32.GetParent(self.parent.winfo_id())
             SWP_SHOWWINDOW = 0x40
             windll.user32.SetWindowPos(hwnd, 0, 0, 0, 
@@ -105,7 +106,7 @@ class TitleBar(tk.Frame):
             self.move_window_bindings(status=False)
         else:
             #restore down window
-            self.maximize_btn.config(text="🗖")
+            # self.maximize_btn.config(text="🗖")
             hwnd = windll.user32.GetParent(self.parent.winfo_id())
             SWP_SHOWWINDOW = 0x40
             windll.user32.SetWindowPos(hwnd, 0, 
@@ -121,6 +122,10 @@ class TitleBar(tk.Frame):
        #reference: https://programtalk.com/python-examples/ctypes.windll.user32.ShowWindow/ 
         hwnd = windll.user32.GetParent(self.parent.winfo_id())
         windll.user32.ShowWindow(hwnd, 0 if hide else 6)
+        
+    def maximize(self):
+        hwnd = windll.user32.GetParent(self.parent.winfo_id())
+        windll.user32.ShowWindow(hwnd, 1)
 
     def move_window(self, event):
         self.parent.geometry(f'+{event.x_root - self.xwin}+{event.y_root - self.ywin}')

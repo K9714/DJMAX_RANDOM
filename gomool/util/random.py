@@ -31,9 +31,9 @@ def select_random(keys, levels):
     cur.execute(sc_sql)
     rows = cur.fetchall()
     songs += rows
-
-    select = random.sample(songs, 1)[0]
-    print(select)
+    if not songs:
+        return None
+    select = random.sample(songs, 1)
     _send_keys(cur, select)
     connection.close()
     return select
@@ -67,7 +67,6 @@ def _send_keys(cur: sqlite3.Cursor, select):
             count += 1
         if ld == level and type != "SC":
             break
-    print(first, first_no, info[0], distnace, count)
     # 키 설정
     # pydirectinput.press(key[0])
     pydirectinput.keyDown('ctrl')
